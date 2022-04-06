@@ -66,7 +66,7 @@ stages:
       artifact: drop
 
 - stage: 'Deploy'
-  displayName: 'Deploy the web application'
+  displayName: 'Deploy the web applications'
   dependsOn: Build
   jobs:
   - deployment: Deploy
@@ -85,5 +85,5 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppName)'
-              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              appName: '$(WebAppNam)'
+              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip' 
